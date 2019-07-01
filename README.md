@@ -1,4 +1,4 @@
-# user_management
+# Ansible way to manage users and group
 
 Manage your users and groups using ansible. This will aloow you to create a user/group, maintains the user authorized keys and syncs the users and group maintained in yml file. The users and groups database is maintained in a yml file with their status as present or abesent.
 
