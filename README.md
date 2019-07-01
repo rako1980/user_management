@@ -50,9 +50,9 @@ ansible-playbook /etc/ansible/roles/user_management/playbooks/standard.yml
 ```
 
 #### Want to call it as a role in your playbook?
->>
+```
 - name: User setups
   include_role:
     name: user_management
-
+```
 
