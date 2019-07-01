@@ -3,7 +3,7 @@
   copy:
     dest: "../vars/groups/{{ groupname }}.yml"
     content: |
-      username: "{{ groupname }}"
+      groupname: "{{ groupname }}"
       state: "present"
 
 - name: load the group file for {{ groupname }}
