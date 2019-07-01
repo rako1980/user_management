@@ -1,11 +1,11 @@
 ---
 
 - name: setup users from file
-  include_tasks: user_setup.yml file={{ item }}
+  include_tasks: users_setup.yml file={{ item }}
   with_fileglob:
     - "vars/users/*"
 
 - name: setup groups from file
-  include_tasks: user_setup.yml file={{ item }}
+  include_tasks: groups_setup.yml file={{ item }}
   with_fileglob:
     - "vars/groups/*"
