@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: false
+  
+  tasks:
+    - name: create a single user
+      include_role:
+        name: user_management
+        tasks_from: create_user.yml        
+

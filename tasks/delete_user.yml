@@ -1,0 +1,15 @@
+---
+- name: update the status of user to absent
+  lineinfile:
+    path: "../vars/users/{{ username }}.yml"
+    line: "state: absent"
+    regexp: "^state:.*"
+
+- name: load the user file for {{ username }}
+  include_vars: "users/{{ username }}.yml"
+
+- name: delete user {{ username }}
+  user:
+    name: "{{ username }}"
+    state: absent
+  become: true

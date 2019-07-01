@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  gather_facts: true
+ 
+  roles:
+    - user_management
+

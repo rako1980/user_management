@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: false
+  
+  tasks:
+    - name: delete a single user
+      include_role:
+        name: user_management
+        tasks_from: delete_user.yml        
+

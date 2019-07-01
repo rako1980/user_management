@@ -1,0 +1,9 @@
+---
+- name: load the user file for {{ username }}
+  include_vars: "users/{{ username }}.yml"
+JFJSDFGJSDFGJSDF
+- name: add authorized keys for {{ username }}
+  authorized_key:
+    user: "{{ username }}"
+    key: "{{ pub_key }}"
+  become: true 

@@ -1,0 +1,5 @@
+username: "rajendra2"
+state: absent
+full_name: "Rajendra Adhikari 1"
+groups_name: "wheel"
+pub_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDULDdezCVF3Xaw2xbMWyrN7M0Nph7gXBQKd3Iq8xaUhRZoTuLinNO1ngf5NiVxSiqB/wQgnSSzj+eJWgHN03c5z4/g20U7tOfddu5SSrCuY8xqL+k/ATGIebUBA53oe4OndOZfLdCDKduLgE9vhR1xW5sc/BDXTWyjDLgi7QbRrSjGXRlPFixjEXH7wL5iiCdvITxPqDNC4oOP01Qnv0YcfoH+9RGYR9vfXpZG01VxMsy465ngezk4IgsHXNBsImD/Wn8eW9WJY9es+sHCJ0BaCHKw1LFZJduCdMimOSFcNpoalk7jz+KR6O85+iJgEkWCHWgA4z6aEWf/NIAbPEVv radhikari@centos-raj"

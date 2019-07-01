@@ -1,0 +1,26 @@
+---
+- name: create a user file for {{ username }}
+  copy:
+    dest: "../vars/users/{{ username }}.yml"
+    content: |
+      username: "{{ username }}"
+      state: "{{ state }}"
+      full_name: "{{ full_name }}"
+      groups_name: "{{ groups_name }}"
+      pub_key: "{{ pub_key }}"
+
+- name: load the user file for {{ username }}
+  include_vars: "users/{{ username }}.yml"
+
+- name: create a user {{ username }}
+  user:
+    name: "{{ username }}"
+    comment: "{{ full_name }}"
+    groups: "{{ groups_name }}"
+  become: true
+
+- name: add authorized keys for {{ username }}
+  authorized_key:
+    user: "{{ username }}"
+    key: "{{ pub_key }}"
+  become: true 
