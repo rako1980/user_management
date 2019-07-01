@@ -1,0 +1,30 @@
+---
+## Manage users
+- name: load the user file from {{ file }}
+  include_vars: "{{ file }}"
+
+- debug: var=username
+- debug: var=state
+
+- block:
+    - name: create a user {{ username }}
+      user:
+        name: "{{ username }}"
+        comment: "{{ full_name }}"
+        groups: "{{ groups_name }}"
+      become: true
+
+    - name: add authorized keys for {{ username }}
+      authorized_key:
+        user: "{{ username }}"
+        key: "{{ pub_key }}"
+      become: true
+  when: state == 'present'
+
+- block:
+    - name: delete a user {{ username }}
+      user:
+        name: "{{ username }}"
+        state: absent
+      become: true
+  when: state == 'absent'
