@@ -20,7 +20,7 @@ cd user_management
 ```
 ### Create groups:
 ```
-ansible-playbook ./playbooks/create_group.yml -e "groupname=teamusa"
+ansible-playbook /etc/ansible/roles/user_management/playbooks/create_group.yml -e "groupname=teamusa"
 ```
 
 ### Create users:
@@ -30,7 +30,7 @@ ansible-playbook ./playbooks/create_user.yml -e "state=present username=mary ful
 Replace above values with appropriately.
 ### Update Authorized key:
 ```
-ansible-playbook ./playbooks/update_key.yml -e "username=mary pub_key='ssh-rsa ... ...'"
+ansible-playbook /etc/ansible/roles/user_management/playbooks/update_key.yml -e "username=mary pub_key='ssh-rsa ... ...'"
 ```
 
 
@@ -41,10 +41,18 @@ ansible-playbook ./playbooks/delete_user.yml -e "username=mary"
 
 ### Delete groups:
 ```
-ansible-playbooks ./playbooks/delete_group.yml -e "groupname=teamusa"
+ansible-playbooks /etc/ansible/roles/user_management/playbooks/delete_group.yml -e "groupname=teamusa"
 ```
 
 Once the users or groups are created their individual yml files are created. When existing groups are added or removed, or new public key is updated, it will simply update the yaml files for user or group. You can run the standard.yml playbook to sync the user or group to your desired lists of servers that will simply add or remove users or groups based on their state in the file.
 ```
 ansible-playbook /etc/ansible/roles/user_management/playbooks/standard.yml
 ```
+
+#### Want to call it as a role in your playbook?
+>>
+- name: User setups
+  include_role:
+    name: user_management
+
+
