@@ -1,7 +1,13 @@
 ---
 - name: load the user file for {{ username }}
   include_vars: "users/{{ username }}.yml"
-JFJSDFGJSDFGJSDF
+
+- name: update the key
+  lineinfile:
+    path: "../vars/users/{{ username }}.yml"
+    line: "pub_key: {{ pub_key }}"
+    regexp: "^pub_key:.*" 
+
 - name: add authorized keys for {{ username }}
   authorized_key:
     user: "{{ username }}"

@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: false
+  
+  tasks:
+    - name: update an authorized key for {{ username }}
+      include_role:
+        name: user_management
+        tasks_from: update_key.yml        
+
