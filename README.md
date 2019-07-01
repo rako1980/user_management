@@ -45,4 +45,6 @@ ansible-playbooks ./playbooks/delete_group.yml -e "groupname=teamusa"
 ```
 
 Once the users or groups are created their individual yml files are created. When existing groups are added or removed, or new public key is updated, it will simply update the yaml files for user or group. You can run the standard.yml playbook to sync the user or group to your desired lists of servers that will simply add or remove users or groups based on their state in the file.
-
+```
+ansible-playbook /etc/ansible/roles/user_management/playbooks/standard.yml
+```
