@@ -1,0 +1,22 @@
+---
+## Manage groups
+- name: load the group file from {{ file }}
+  include_vars: "{{ file }}"
+
+- debug: var=groupname
+- debug: var=state
+
+- block:
+    - name: create a group {{ groupname }}
+      group:
+        name: "{{ groupname }}"
+      become: true
+  when: state == 'present'
+
+- block:
+    - name: delete a group {{ groupname }}
+      group:
+        name: "{{ groupname }}"
+        state: absent
+      become: true
+  when: state == 'absent'
