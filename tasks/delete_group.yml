@@ -6,13 +6,10 @@
     regexp: "^state:.*"
 
 - name: load the group file for {{ groupname }}
-  include_vars: "groupname/{{ groupname }}.yml"
-
-- debug: var=groupname
-- debug: var=state
+  include_vars: "group/{{ groupname }}.yml"
 
 - name: delete group {{ groupname }}
-  user:
+  group:
     name: "{{ groupname }}"
     state: absent
   become: true
