@@ -6,7 +6,7 @@
     regexp: "^state:.*"
 
 - name: load the group file for {{ groupname }}
-  include_vars: "group/{{ groupname }}.yml"
+  include_vars: "groups/{{ groupname }}.yml"
 
 - name: delete group {{ groupname }}
   group:

@@ -4,10 +4,10 @@
     dest: "../vars/groups/{{ groupname }}.yml"
     content: |
       username: "{{ groupname }}"
-      state: "{{ state }}"
+      state: "present"
 
 - name: load the group file for {{ groupname }}
-  include_vars: "users/{{ groupname }}.yml"
+  include_vars: "groups/{{ groupname }}.yml"
 
 - name: create a group {{ groupname }}
   group:
